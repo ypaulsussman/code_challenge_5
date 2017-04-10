@@ -12,6 +12,25 @@
 
   </head>
   <body>
-
+    <div class="container">
+            <h1>Mongoose Messaging Service</h1>
+            <br>
+            <div ng-controller="ViewController">
+                <input type="text" ng-model="newMessage.name" placeholder="What's your name?">
+                <br>
+                <input type="text" ng-model="newMessage.message" placeholder="What's your message?">
+                <br>
+                <button type="button" ng-click="postData(newMessage)">Enter message</button>
+                <br>
+                <div ng-repeat="message in messageObject.messages">
+                    <!-- Inside an expression, you can use js, so string interpolation is OK, e.g. {{message.name + "is nice."}} -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>{{message.name}} says, <em>"{{message.message}}"</em></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
   </body>
 </html>
